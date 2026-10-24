@@ -1,0 +1,152 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow - Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <header class="header">
+            <div>
+                <h1>TaskFlow ✨</h1>
+                <p>Organize your day, achieve your goals.</p>
+            </div>
+
+            <button id="themeToggle" class="theme-button">
+                🌙 Dark Mode
+            </button>
+        </header>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+        </section>
+
+        <section class="task-form-section">
+
+            <h2 id="formTitle">Add a New Task</h2>
+
+            <form id="taskForm">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter your task..."
+                    maxlength="120"
+                    required
+                >
+
+                <select id="categoryInput">
+                    <option value="Personal">Personal</option>
+                    <option value="Study">Study</option>
+                    <option value="Work">Work</option>
+                    <option value="Health">Health</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="priorityInput">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <input
+                    type="date"
+                    id="dueDateInput"
+                    aria-label="Task due date"
+                >
+
+                <button type="submit" id="submitButton">
+                    + Add Task
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelEdit"
+                    class="cancel-button"
+                    hidden
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="task-list-section">
+
+            <h2>My Tasks 📋</h2>
+
+            <div class="filters">
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="🔍 Search tasks..."
+                >
+
+                <select id="statusFilter">
+                    <option value="All">All Tasks</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <select id="categoryFilter">
+                    <option value="All">All Categories</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Study">Study</option>
+                    <option value="Work">Work</option>
+                    <option value="Health">Health</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="priorityFilter">
+                    <option value="All">All Priorities</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+            </div>
+
+            <div id="taskList" class="task-list"></div>
+
+            <p id="emptyMessage" class="empty-message">
+                No tasks found. Add your first task! 🎯
+            </p>
+
+        </section>
+
+        <footer>
+            <p>Made with ❤️ | TaskFlow Task Manager</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
